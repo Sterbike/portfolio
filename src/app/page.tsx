@@ -1,0 +1,533 @@
+"use client";
+
+import React, { useState } from "react";
+import Image from "next/image";
+import Navbar from "../components/Navbar";
+import ResumePanel from "../components/resumePanel";
+import FadeInOnScroll from "../components/FadeInOnScroll";
+
+export default function Home() {
+  const [showResumePanel, setShowResumePanel] = useState(false);
+
+  return (
+    <>
+      <ResumePanel
+        setShowResumePanel={setShowResumePanel}
+        showResumePanel={showResumePanel}
+      />
+      <div className="relative flex size-full min-h-screen flex-col group/design-root overflow-clip">
+        <Image
+        width={500}
+        height={500}
+        className="top-0 left-0 z-[-1] w-screen h-screen object-cover fixed"
+        src="./background.jpg"
+        alt="Background Image"
+        />
+        <div className="layout-container flex flex-col z-6">
+          <Navbar setShowResumePanel={setShowResumePanel} />
+          <div
+            id="about"
+            className="scroll-mt-3 lg:px-20 md:px-40 flex flex-1 justify-center py-5 "
+          >
+            <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
+              <div className="@container">
+                <div className="flex flex-col px-4 py-10 gap-8 lg:flex-row">
+                  <FadeInOnScroll>
+                    <div className="w-full lg:bg-cover bg-contain bg-center bg-no-repeat aspect-video rounded-lg">
+                      <Image
+                        width={500}
+                        height={500}
+                        className="m-auto rounded-3xl max-w-80 lg:rounded-full lg:max-w-60 border-[1px] border-black "
+                        src="./profile.jpg"
+                        alt="Profile Picture"
+                      />
+                    </div>
+                  </FadeInOnScroll>
+                  <div className="flex flex-col gap-6 @[480px]:min-w-[400px] @[480px]:gap-8 @[864px]:justify-center">
+                    <div className="flex flex-col gap-2 text-left">
+                      <FadeInOnScroll>
+                        <h1 className="text-[#111418] text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                          Hi, I&apos;m Richard, a Junior Software Developer
+                        </h1>
+                      </FadeInOnScroll>
+                      <FadeInOnScroll>
+                        <h2 className="text-[#111418] text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                          I&apos;m currently studying Computer Science at the
+                          University of Szeged, and this portfolio showcases
+                          some of my projects. Feel free to explore my work and
+                          get in touch if you have any questions or
+                          opportunities!
+                        </h2>
+                      </FadeInOnScroll>
+                    </div>
+                    <FadeInOnScroll>
+                      <a
+                        href="#projects"
+                        className="hover:bg-blue-500 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#0c7ff2] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                      >
+                        <span className="truncate">View Projects</span>
+                      </a>
+                    </FadeInOnScroll>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <FadeInOnScroll>
+                  <h2
+                    id="projects"
+                    className="scroll-mt-15 text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+                  >
+                    Projects
+                  </h2>
+                </FadeInOnScroll>
+                <div className="grid lg:grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+                  <FadeInOnScroll>
+                    <div className="flex flex-col gap-3 pb-3 rounded-lg hover:scale-110 shadow-none hover:shadow-2xl transition-all duration-300 ease-in-out h-full bg-[#f0f0f0] white border border-[#dbe0e6] overflow-hidden">
+                      <div className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg relative group overflow-hidden">
+                        <a
+                          target="_blank"
+                          href="https://www.soszarnyitas.hu"
+                          className="absolute flex gap-2 justify-center items-center text-xl inset-0 bg-black/10 z-10 group-hover:translate-x-0 group-hover:opacity-100 opacity-0 cursor-pointer backdrop-blur-sm translate-x-full transition-all duration-300 "
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="800px"
+                            width="800px"
+                            version="1.1"
+                            id="Capa_1"
+                            viewBox="0 0 58 58"
+                            xmlSpace="preserve"
+                            xmlnsXlink="http://www.w3.org/1999/xlink"
+                            className="w-7 fill-white "
+                          >
+                            <path d="M50.688,48.222C55.232,43.101,58,36.369,58,29c0-7.667-2.996-14.643-7.872-19.834c0,0,0-0.001,0-0.001  c-0.004-0.006-0.01-0.008-0.013-0.013c-5.079-5.399-12.195-8.855-20.11-9.126l-0.001-0.001L29.439,0.01C29.293,0.005,29.147,0,29,0  s-0.293,0.005-0.439,0.01l-0.563,0.015l-0.001,0.001c-7.915,0.271-15.031,3.727-20.11,9.126c-0.004,0.005-0.01,0.007-0.013,0.013  c0,0,0,0.001-0.001,0.002C2.996,14.357,0,21.333,0,29c0,7.369,2.768,14.101,7.312,19.222c0.006,0.009,0.006,0.019,0.013,0.028  c0.018,0.025,0.044,0.037,0.063,0.06c5.106,5.708,12.432,9.385,20.608,9.665l0.001,0.001l0.563,0.015C28.707,57.995,28.853,58,29,58  s0.293-0.005,0.439-0.01l0.563-0.015l0.001-0.001c8.185-0.281,15.519-3.965,20.625-9.685c0.013-0.017,0.034-0.022,0.046-0.04  C50.682,48.241,50.682,48.231,50.688,48.222z M2.025,30h12.003c0.113,4.239,0.941,8.358,2.415,12.217  c-2.844,1.029-5.563,2.409-8.111,4.131C4.585,41.891,2.253,36.21,2.025,30z M8.878,11.023c2.488,1.618,5.137,2.914,7.9,3.882  C15.086,19.012,14.15,23.44,14.028,28H2.025C2.264,21.493,4.812,15.568,8.878,11.023z M55.975,28H43.972  c-0.122-4.56-1.058-8.988-2.75-13.095c2.763-0.968,5.412-2.264,7.9-3.882C53.188,15.568,55.736,21.493,55.975,28z M28,14.963  c-2.891-0.082-5.729-0.513-8.471-1.283C21.556,9.522,24.418,5.769,28,2.644V14.963z M28,16.963V28H16.028  c0.123-4.348,1.035-8.565,2.666-12.475C21.7,16.396,24.821,16.878,28,16.963z M30,16.963c3.179-0.085,6.3-0.566,9.307-1.438  c1.631,3.91,2.543,8.127,2.666,12.475H30V16.963z M30,14.963V2.644c3.582,3.125,6.444,6.878,8.471,11.036  C35.729,14.45,32.891,14.881,30,14.963z M40.409,13.072c-1.921-4.025-4.587-7.692-7.888-10.835  c5.856,0.766,11.125,3.414,15.183,7.318C45.4,11.017,42.956,12.193,40.409,13.072z M17.591,13.072  c-2.547-0.879-4.991-2.055-7.294-3.517c4.057-3.904,9.327-6.552,15.183-7.318C22.178,5.38,19.512,9.047,17.591,13.072z M16.028,30  H28v10.038c-3.307,0.088-6.547,0.604-9.661,1.541C16.932,37.924,16.141,34.019,16.028,30z M28,42.038v13.318  c-3.834-3.345-6.84-7.409-8.884-11.917C21.983,42.594,24.961,42.124,28,42.038z M30,55.356V42.038  c3.039,0.085,6.017,0.556,8.884,1.4C36.84,47.947,33.834,52.011,30,55.356z M30,40.038V30h11.972  c-0.113,4.019-0.904,7.924-2.312,11.58C36.547,40.642,33.307,40.126,30,40.038z M43.972,30h12.003  c-0.228,6.21-2.559,11.891-6.307,16.348c-2.548-1.722-5.267-3.102-8.111-4.131C43.032,38.358,43.859,34.239,43.972,30z   M9.691,47.846c2.366-1.572,4.885-2.836,7.517-3.781c1.945,4.36,4.737,8.333,8.271,11.698C19.328,54.958,13.823,52.078,9.691,47.846  z M32.521,55.763c3.534-3.364,6.326-7.337,8.271-11.698c2.632,0.945,5.15,2.209,7.517,3.781  C44.177,52.078,38.672,54.958,32.521,55.763z" />
+                          </svg>
+                          <p className="">Visit site</p>
+                        </a>
+                        <Image
+                          width={500}
+                          height={500}
+                          className="rounded-lg w-full h-full object-cover cursor-pointer"
+                          src="./soszarnyitas.PNG"
+                          alt="Soszarnyitas Thumbnail"
+                        />
+                      </div>
+                      <div className="px-2">
+                        <p className="text-[#111418] text-base font-medium leading-normal">
+                          soszarnyitas.hu
+                        </p>
+                        <p className="text-[#60758a] text-sm font-normal leading-normal">
+                          soszarnyitas.hu was one of my very first projects - a
+                          website built for a local emergency gate opening
+                          service.
+                        </p>
+                        <a className="lg:hidden text-blue-400 underline" href="https://www.soszarnyitas.hu" target="_blank" >Visit Site</a>
+                      </div>
+                    </div>
+                  </FadeInOnScroll>
+                  <FadeInOnScroll>
+                    <div className="flex flex-col gap-3 pb-3 rounded-lg hover:scale-110 shadow-none hover:shadow-2xl transition-all duration-300 ease-in-out h-full bg-[#f0f0f0] border border-[#dbe0e6]">
+                      <div className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg group relative overflow-hidden">
+                        <a
+                          target="_blank"
+                          href="https://www.djgabro.hu"
+                          className="absolute flex gap-2 justify-center items-center text-xl inset-0 bg-black/10 z-10 group-hover:translate-x-0 group-hover:opacity-100 opacity-0 cursor-pointer backdrop-blur-sm translate-x-full transition-all duration-300 "
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="800px"
+                            width="800px"
+                            version="1.1"
+                            id="Capa_1"
+                            viewBox="0 0 58 58"
+                            xmlSpace="preserve"
+                            xmlnsXlink="http://www.w3.org/1999/xlink"
+                            className="w-7 fill-white "
+                          >
+                            <path d="M50.688,48.222C55.232,43.101,58,36.369,58,29c0-7.667-2.996-14.643-7.872-19.834c0,0,0-0.001,0-0.001  c-0.004-0.006-0.01-0.008-0.013-0.013c-5.079-5.399-12.195-8.855-20.11-9.126l-0.001-0.001L29.439,0.01C29.293,0.005,29.147,0,29,0  s-0.293,0.005-0.439,0.01l-0.563,0.015l-0.001,0.001c-7.915,0.271-15.031,3.727-20.11,9.126c-0.004,0.005-0.01,0.007-0.013,0.013  c0,0,0,0.001-0.001,0.002C2.996,14.357,0,21.333,0,29c0,7.369,2.768,14.101,7.312,19.222c0.006,0.009,0.006,0.019,0.013,0.028  c0.018,0.025,0.044,0.037,0.063,0.06c5.106,5.708,12.432,9.385,20.608,9.665l0.001,0.001l0.563,0.015C28.707,57.995,28.853,58,29,58  s0.293-0.005,0.439-0.01l0.563-0.015l0.001-0.001c8.185-0.281,15.519-3.965,20.625-9.685c0.013-0.017,0.034-0.022,0.046-0.04  C50.682,48.241,50.682,48.231,50.688,48.222z M2.025,30h12.003c0.113,4.239,0.941,8.358,2.415,12.217  c-2.844,1.029-5.563,2.409-8.111,4.131C4.585,41.891,2.253,36.21,2.025,30z M8.878,11.023c2.488,1.618,5.137,2.914,7.9,3.882  C15.086,19.012,14.15,23.44,14.028,28H2.025C2.264,21.493,4.812,15.568,8.878,11.023z M55.975,28H43.972  c-0.122-4.56-1.058-8.988-2.75-13.095c2.763-0.968,5.412-2.264,7.9-3.882C53.188,15.568,55.736,21.493,55.975,28z M28,14.963  c-2.891-0.082-5.729-0.513-8.471-1.283C21.556,9.522,24.418,5.769,28,2.644V14.963z M28,16.963V28H16.028  c0.123-4.348,1.035-8.565,2.666-12.475C21.7,16.396,24.821,16.878,28,16.963z M30,16.963c3.179-0.085,6.3-0.566,9.307-1.438  c1.631,3.91,2.543,8.127,2.666,12.475H30V16.963z M30,14.963V2.644c3.582,3.125,6.444,6.878,8.471,11.036  C35.729,14.45,32.891,14.881,30,14.963z M40.409,13.072c-1.921-4.025-4.587-7.692-7.888-10.835  c5.856,0.766,11.125,3.414,15.183,7.318C45.4,11.017,42.956,12.193,40.409,13.072z M17.591,13.072  c-2.547-0.879-4.991-2.055-7.294-3.517c4.057-3.904,9.327-6.552,15.183-7.318C22.178,5.38,19.512,9.047,17.591,13.072z M16.028,30  H28v10.038c-3.307,0.088-6.547,0.604-9.661,1.541C16.932,37.924,16.141,34.019,16.028,30z M28,42.038v13.318  c-3.834-3.345-6.84-7.409-8.884-11.917C21.983,42.594,24.961,42.124,28,42.038z M30,55.356V42.038  c3.039,0.085,6.017,0.556,8.884,1.4C36.84,47.947,33.834,52.011,30,55.356z M30,40.038V30h11.972  c-0.113,4.019-0.904,7.924-2.312,11.58C36.547,40.642,33.307,40.126,30,40.038z M43.972,30h12.003  c-0.228,6.21-2.559,11.891-6.307,16.348c-2.548-1.722-5.267-3.102-8.111-4.131C43.032,38.358,43.859,34.239,43.972,30z   M9.691,47.846c2.366-1.572,4.885-2.836,7.517-3.781c1.945,4.36,4.737,8.333,8.271,11.698C19.328,54.958,13.823,52.078,9.691,47.846  z M32.521,55.763c3.534-3.364,6.326-7.337,8.271-11.698c2.632,0.945,5.15,2.209,7.517,3.781  C44.177,52.078,38.672,54.958,32.521,55.763z" />
+                          </svg>
+                          <p className="">Visit site</p>
+                        </a>
+                        <Image
+                          width={500}
+                          height={500}
+                          className="rounded-lg w-full h-full object-cover cursor-pointer"
+                          src="./djgabro.PNG"
+                          alt="Djgabro Thumbnail"
+                        />
+                      </div>
+                      <div className="px-2">
+                        <p className="text-[#111418] text-base font-medium leading-normal">
+                          djgabro.hu
+                        </p>
+                        <p className="text-[#60758a] text-sm font-normal leading-normal">
+                          djgabro.hu is a dynamic website I built for a local DJ,
+                          featuring event highlights, booking options, and a
+                          modern, music-themed design.
+                        </p>
+                        <a className="lg:hidden text-blue-400 underline" href="https://www.djgabro.hu" target="_blank">Visit Site</a>
+                      </div>
+                    </div>
+                  </FadeInOnScroll>
+                  <FadeInOnScroll>
+                    <div className="flex flex-col gap-3 pb-3 rounded-lg hover:scale-110 shadow-none hover:shadow-2xl transition-all duration-300 ease-in-out h-full bg-[#f0f0f0] border border-[#dbe0e6]">
+                      <div className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg group relative overflow-hidden">
+                        <a
+                          href="./GiftVentures.docx"
+                          download
+                          className="absolute flex gap-2 justify-center items-center text-xl inset-0 bg-black/10 z-10 group-hover:translate-x-0 group-hover:opacity-100 opacity-0 cursor-pointer backdrop-blur-sm translate-x-full transition-all duration-300 "
+                        >
+                          <svg
+                            className="w-7 fill-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="800px"
+                            height="800px"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <path
+                              opacity="0.5"
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M3 14.25C3.41421 14.25 3.75 14.5858 3.75 15C3.75 16.4354 3.75159 17.4365 3.85315 18.1919C3.9518 18.9257 4.13225 19.3142 4.40901 19.591C4.68577 19.8678 5.07435 20.0482 5.80812 20.1469C6.56347 20.2484 7.56459 20.25 9 20.25H15C16.4354 20.25 17.4365 20.2484 18.1919 20.1469C18.9257 20.0482 19.3142 19.8678 19.591 19.591C19.8678 19.3142 20.0482 18.9257 20.1469 18.1919C20.2484 17.4365 20.25 16.4354 20.25 15C20.25 14.5858 20.5858 14.25 21 14.25C21.4142 14.25 21.75 14.5858 21.75 15V15.0549C21.75 16.4225 21.75 17.5248 21.6335 18.3918C21.5125 19.2919 21.2536 20.0497 20.6517 20.6516C20.0497 21.2536 19.2919 21.5125 18.3918 21.6335C17.5248 21.75 16.4225 21.75 15.0549 21.75H8.94513C7.57754 21.75 6.47522 21.75 5.60825 21.6335C4.70814 21.5125 3.95027 21.2536 3.34835 20.6517C2.74643 20.0497 2.48754 19.2919 2.36652 18.3918C2.24996 17.5248 2.24998 16.4225 2.25 15.0549C2.25 15.0366 2.25 15.0183 2.25 15C2.25 14.5858 2.58579 14.25 3 14.25Z"
+                              
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M12 16.75C12.2106 16.75 12.4114 16.6615 12.5535 16.5061L16.5535 12.1311C16.833 11.8254 16.8118 11.351 16.5061 11.0715C16.2004 10.792 15.726 10.8132 15.4465 11.1189L12.75 14.0682V3C12.75 2.58579 12.4142 2.25 12 2.25C11.5858 2.25 11.25 2.58579 11.25 3V14.0682L8.55353 11.1189C8.27403 10.8132 7.79963 10.792 7.49393 11.0715C7.18823 11.351 7.16698 11.8254 7.44648 12.1311L11.4465 16.5061C11.5886 16.6615 11.7894 16.75 12 16.75Z"
+                              
+                            />
+                          </svg>
+                          <p className="">Download documentation</p>
+                        </a>
+                        <Image
+                          onClick={() => {}}
+                          width={500}
+                          height={500}
+                          className="rounded-lg w-full h-full object-cover cursor-pointer"
+                          src="./giftventures.jpg"
+                          alt="Giftventures Thumbnail"
+                        />
+                      </div>
+                      <div className="px-2">
+                        <p className="text-[#111418] text-base font-medium leading-normal">
+                          GiftVentures
+                        </p>
+                        <p className="text-[#60758a] text-sm font-normal leading-normal">
+                          GiftVentures is one of my first full-stack group
+                          projects - a web app for gifting unique experiences,
+                          built with React, Node.js, and MongoDB as part of our
+                          final exam project.{" "}
+                        </p>
+                        <a className="lg:hidden text-blue-400 underline" href="./GiftVentures.docx" download>Download documentation</a>
+                      </div>
+                    </div>
+                  </FadeInOnScroll>
+                </div>
+              </div>
+              <FadeInOnScroll>
+                <h2
+                  id="skills"
+                  className="scroll-mt-15 text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+                >
+                  Skills
+                </h2>
+              </FadeInOnScroll>
+
+              <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+                <FadeInOnScroll>
+                  <div className="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] bg-[#f0f0f0] p-4 items-center">
+                    <div
+                      className="text-[#111418]"
+                      data-icon="Code"
+                      data-size="24px"
+                      data-weight="regular"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24px"
+                        height="24px"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"></path>
+                      </svg>
+                    </div>
+                    <h2 className="text-[#111418] text-base font-bold leading-tight">
+                      HTML
+                    </h2>
+                  </div>
+                </FadeInOnScroll>
+                <FadeInOnScroll>
+                  <div className="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] bg-[#f0f0f0] p-4 items-center">
+                    <div
+                      className="text-[#111418]"
+                      data-icon="Code"
+                      data-size="24px"
+                      data-weight="regular"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24px"
+                        height="24px"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"></path>
+                      </svg>
+                    </div>
+                    <h2 className="text-[#111418] text-base font-bold leading-tight">
+                      CSS
+                    </h2>
+                  </div>
+                </FadeInOnScroll>
+                <FadeInOnScroll>
+                  <div className="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] bg-[#f0f0f0] p-4 items-center">
+                    <div
+                      className="text-[#111418]"
+                      data-icon="Code"
+                      data-size="24px"
+                      data-weight="regular"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24px"
+                        height="24px"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"></path>
+                      </svg>
+                    </div>
+                    <h2 className="text-[#111418] text-base font-bold leading-tight">
+                      JavaScript
+                    </h2>
+                  </div>
+                </FadeInOnScroll>
+                <FadeInOnScroll>
+                  <div className="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] bg-[#f0f0f0] p-4 items-center">
+                    <div
+                      className="text-[#111418]"
+                      data-icon="Code"
+                      data-size="24px"
+                      data-weight="regular"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24px"
+                        height="24px"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"></path>
+                      </svg>
+                    </div>
+                    <h2 className="text-[#111418] text-base font-bold leading-tight">
+                      React
+                    </h2>
+                  </div>
+                </FadeInOnScroll>
+                <FadeInOnScroll>
+                  <div className="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] bg-[#f0f0f0] p-4 items-center">
+                    <div
+                      className="text-[#111418]"
+                      data-icon="Code"
+                      data-size="24px"
+                      data-weight="regular"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24px"
+                        height="24px"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"></path>
+                      </svg>
+                    </div>
+                    <h2 className="text-[#111418] text-base font-bold leading-tight">
+                      Node.js
+                    </h2>
+                  </div>
+                </FadeInOnScroll>
+                <FadeInOnScroll>
+                  <div className="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] bg-[#f0f0f0] p-4 items-center">
+                    <div
+                      className="text-[#111418]"
+                      data-icon="Code"
+                      data-size="24px"
+                      data-weight="regular"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24px"
+                        height="24px"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"></path>
+                      </svg>
+                    </div>
+                    <h2 className="text-[#111418] text-base font-bold leading-tight">
+                      Git
+                    </h2>
+                  </div>
+                </FadeInOnScroll>
+                <FadeInOnScroll>
+                  <div className="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] bg-[#f0f0f0] p-4 items-center">
+                    <div
+                      className="text-[#111418]"
+                      data-icon="Code"
+                      data-size="24px"
+                      data-weight="regular"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24px"
+                        height="24px"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"></path>
+                      </svg>
+                    </div>
+                    <h2 className="text-[#111418] text-base font-bold leading-tight">
+                      Tailwindcss
+                    </h2>
+                  </div>
+                </FadeInOnScroll>
+                <FadeInOnScroll>
+                  <div className="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] bg-[#f0f0f0] p-4 items-center">
+                    <div
+                      className="text-[#111418]"
+                      data-icon="Code"
+                      data-size="24px"
+                      data-weight="regular"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24px"
+                        height="24px"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"></path>
+                      </svg>
+                    </div>
+                    <h2 className="text-[#111418] text-base font-bold leading-tight">
+                      Python
+                    </h2>
+                  </div>
+                </FadeInOnScroll>
+                <FadeInOnScroll>
+                  <div className="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] bg-[#f0f0f0] p-4 items-center">
+                    <div
+                      className="text-[#111418]"
+                      data-icon="Code"
+                      data-size="24px"
+                      data-weight="regular"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24px"
+                        height="24px"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"></path>
+                      </svg>
+                    </div>
+                    <h2 className="text-[#111418] text-base font-bold leading-tight">
+                      Java
+                    </h2>
+                  </div>
+                </FadeInOnScroll>
+                <FadeInOnScroll>
+                  <div className="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] bg-[#f0f0f0] p-4 items-center">
+                    <div
+                      className="text-[#111418]"
+                      data-icon="Code"
+                      data-size="24px"
+                      data-weight="regular"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24px"
+                        height="24px"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"></path>
+                      </svg>
+                    </div>
+                    <h2 className="text-[#111418] text-base font-bold leading-tight">
+                      MongoDB
+                    </h2>
+                  </div>
+                </FadeInOnScroll>
+              </div>
+              <FadeInOnScroll>
+                <h2
+                  id="contact"
+                  className="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+                >
+                  Contact
+                </h2>
+              </FadeInOnScroll>
+              <FadeInOnScroll>
+                <form
+                  action="https://formsubmit.co/hodiricsi@gmail.com"
+                  method="POST"
+                  className="flex flex-col gap-4 px-4 pb-10 pt-3 w-full"
+                >
+                  <div className="flex lg:max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                    <label className="flex flex-col min-w-40 flex-1">
+                      <p className="text-[#111418] text-base font-medium leading-normal pb-2">
+                        Email
+                      </p>
+                      <input
+                        required
+                        name="email"
+                        placeholder="your.email@example.com"
+                        className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] focus:outline-0 focus:ring-0 border border-[#dbe0e6] bg-[#f0f0f0] focus:border-[#dbe0e6] h-14 placeholder:text-[#60758a] p-[15px] text-base font-normal leading-normal"
+                        defaultValue=""
+                      />
+                    </label>
+                  </div>
+                  <div className="flex lg:max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                    <label className="flex flex-col min-w-40 flex-1">
+                      <p className="text-[#111418] text-base font-medium leading-normal pb-2">
+                        Message
+                      </p>
+                      <textarea
+                        required
+                        name="message"
+                        placeholder="Your message"
+                        className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] focus:outline-0 focus:ring-0 border border-[#dbe0e6] bg-[#f0f0f0] focus:border-[#dbe0e6] min-h-36 placeholder:text-[#60758a] p-[15px] text-base font-normal leading-normal"
+                      ></textarea>
+                    </label>
+                  </div>
+                  <div className="flex px-4 py-3 justify-end">
+                    <button className="hover:bg-blue-500 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0c7ff2] text-white text-sm font-bold leading-normal tracking-[0.015em]">
+                      <span className="truncate">Send</span>
+                    </button>
+                  </div>
+                </form>
+              </FadeInOnScroll>
+            </div>
+          </div>
+          <footer className="flex justify-center bg-[#8b8b8b]">
+            <div className="flex max-w-[960px] flex-1 flex-col">
+              <footer className="flex flex-col gap-6 px-5 py-10 text-center @container">
+                <p className="text-[#f0f0f0] text-base font-normal leading-normal">
+                  @2025 Richard&apos;s Portfolio
+                </p>
+              </footer>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </>
+  );
+}
