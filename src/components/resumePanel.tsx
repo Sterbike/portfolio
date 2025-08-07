@@ -2,12 +2,12 @@
 
 import React from "react";
 
-interface resumePanelProps {
+interface ResumePanelProps {
   setShowResumePanel: (show: boolean) => void;
   showResumePanel?: boolean;
 }
 
-const resumePanel: React.FC<resumePanelProps> = ({ setShowResumePanel, showResumePanel }) => {
+const ResumePanel: React.FC<ResumePanelProps> = ({ setShowResumePanel, showResumePanel }) => {
   return (
     <div
       onClick={() => setShowResumePanel(false)}
@@ -94,4 +94,4 @@ const resumePanel: React.FC<resumePanelProps> = ({ setShowResumePanel, showResum
   );
 };
 
-export default resumePanel;
+export default ResumePanel;
