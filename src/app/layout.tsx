@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Portfolio",
   icons:{
-    icon: "/logo.png",
+    icon: "./logo.png",
   }
 
 };
