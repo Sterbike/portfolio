@@ -20,11 +20,11 @@ export default function Home() {
       />
       <div className="relative flex size-full min-h-screen flex-col group/design-root overflow-clip">
         <Image
-        width={500}
-        height={500}
-        className="top-0 left-0 z-[-1] w-screen h-screen object-cover fixed"
-        src="./background.jpg"
-        alt="Background Image"
+          width={500}
+          height={500}
+          className="top-0 left-0 z-[-1] w-screen h-screen object-cover fixed"
+          src="./background.jpg"
+          alt="Background Image"
         />
         <div className="layout-container flex flex-col z-6">
           <Navbar setShowResumePanel={setShowResumePanel} />
@@ -66,7 +66,7 @@ export default function Home() {
                     <FadeInOnScroll>
                       <a
                         href="#contact"
-                        className="hover:bg-blue-500 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#0c7ff2] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                        className="hover:bg-blue-500 w-full flex min-w-[84px] lg:max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#0c7ff2] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
                       >
                         <span className="truncate">Contact me</span>
                       </a>
@@ -84,21 +84,21 @@ export default function Home() {
                   </h2>
                 </FadeInOnScroll>
                 <div className="grid lg:grid-cols-[repeat(3,minmax(158px,1fr))] gap-3 p-4">
-                  <ProjectCard 
+                  <ProjectCard
                     imgUrl="./soszarnyitas.PNG"
                     imgAlt="Soszarnyitas Thumbnail"
                     linkUrl="https://www.soszarnyitas.hu"
                     title="Soszarnyitas.hu"
                     description="soszarnyitas.hu was one of my very first projects - a website built for a local emergency gate opening service."
                   />
-                  <ProjectCard 
+                  <ProjectCard
                     imgUrl="./djgabro.PNG"
                     imgAlt="DJ Gabro Thumbnail"
                     linkUrl="https://www.djgabro.hu"
                     title="DJ Gabro"
                     description="DJ Gabro is a website I created for a local DJ, showcasing his services and events."
                   />
-                  <ProjectCard 
+                  <ProjectCard
                     imgUrl="./giftventures.jpg"
                     imgAlt="GiftVentures Thumbnail"
                     linkUrl="./GiftVentures.docx"
@@ -143,13 +143,13 @@ export default function Home() {
                 </h2>
               </FadeInOnScroll>
               <div className="grid lg:grid-cols-[repeat(4,minmax(158px,1fr))] grid-cols-[repeat(2,minmax(158px,1fr))] gap-3 p-4">
-                <ContactCard 
+                <ContactCard
                   title="Github"
                   linkUrl="https://github.com/Sterbike"
                   iconUrl="./github-mark.png"
                   iconAlt="GitHub Icon"
                 />
-                <ContactCard 
+                <ContactCard
                   title="Facebook"
                   linkUrl="https://www.facebook.com/richard.hodi.7/"
                   iconUrl="./facebook-icon.png"
@@ -160,24 +160,24 @@ export default function Home() {
                   linkUrl="https://www.linkedin.com/in/richárd-hódi-710499183"
                   iconUrl="./linkedin-icon.png"
                   iconAlt="LinkedIn Icon"
-                 />
+                />
                 <ContactCard
-                  title="Email" 
+                  title="Email"
                   linkUrl="mailto:hodiricsi@gmail.com"
                   iconUrl="./gmail.png"
                   iconAlt="Email Icon"
                   mail
-                 />
+                />
               </div>
             </div>
           </div>
-          <footer className="flex justify-center bg-[#8b8b8b]">
-            <div className="flex max-w-[960px] flex-1 flex-col">
-              <footer className="flex flex-col gap-6 px-5 py-10 text-center @container">
-                <p className="text-[#f0f0f0] text-base font-normal leading-normal">
-                  @2025 Richard&apos;s Portfolio
-                </p>
-              </footer>
+          <footer className="relative flex flex-col lg:block bg-[#8b8b8b] px-5 py-10 @container">
+            <p className="text-[#f0f0f0] text-base font-normal leading-normal text-center">
+              @2025 Richard&apos;s Portfolio
+            </p>
+            <div className="lg:absolute lg:right-20 lg:top-1/2 lg:-translate-y-1/2 text-center mt-5 lg:mt-0">
+              <p className="font-semibold text-lg">Contact</p>
+              <p>hodiricsi@gmail.com</p>
             </div>
           </footer>
         </div>
