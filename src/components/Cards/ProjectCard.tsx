@@ -1,5 +1,5 @@
 import React from "react";
-import FadeInOnScroll from "./FadeInOnScroll";
+import FadeInOnScroll from "../FadeInOnScroll";
 import Image from "next/image";
 
 interface ProjectCardProps {

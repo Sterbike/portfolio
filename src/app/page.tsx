@@ -5,8 +5,9 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import ResumePanel from "@/components/ResumePanel";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
-import SkillCard from "@/components/SkillCard";
-import ProjectCard from "@/components/ProjectCard";
+import SkillCard from "@/components/Cards/SkillCard";
+import ProjectCard from "@/components/Cards/ProjectCard";
+import ContactCard from "@/components/Cards/ContactCard";
 
 export default function Home() {
   const [showResumePanel, setShowResumePanel] = useState(false);
@@ -141,46 +142,33 @@ export default function Home() {
                   Contact
                 </h2>
               </FadeInOnScroll>
-              <FadeInOnScroll>
-                <form
-                  action="https://formsubmit.co/hodiricsi@gmail.com"
-                  method="POST"
-                  className="flex flex-col gap-4 px-4 pb-10 pt-3 w-full"
-                >
-                  <div className="flex lg:max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-                    <label className="flex flex-col min-w-40 flex-1">
-                      <p className="text-[#111418] text-base font-medium leading-normal pb-2">
-                        Email
-                      </p>
-                      <input
-                        required
-                        name="email"
-                        placeholder="your.email@example.com"
-                        className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] focus:outline-0 focus:ring-0 border border-[#dbe0e6] bg-[#f0f0f0] focus:border-[#dbe0e6] h-14 placeholder:text-[#60758a] p-[15px] text-base font-normal leading-normal"
-                        defaultValue=""
-                      />
-                    </label>
-                  </div>
-                  <div className="flex lg:max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-                    <label className="flex flex-col min-w-40 flex-1">
-                      <p className="text-[#111418] text-base font-medium leading-normal pb-2">
-                        Message
-                      </p>
-                      <textarea
-                        required
-                        name="message"
-                        placeholder="Your message"
-                        className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] focus:outline-0 focus:ring-0 border border-[#dbe0e6] bg-[#f0f0f0] focus:border-[#dbe0e6] min-h-36 placeholder:text-[#60758a] p-[15px] text-base font-normal leading-normal"
-                      ></textarea>
-                    </label>
-                  </div>
-                  <div className="flex px-4 py-3 justify-end">
-                    <button className="hover:bg-blue-500 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0c7ff2] text-white text-sm font-bold leading-normal tracking-[0.015em]">
-                      <span className="truncate">Send</span>
-                    </button>
-                  </div>
-                </form>
-              </FadeInOnScroll>
+              <div className="grid lg:grid-cols-[repeat(4,minmax(158px,1fr))] grid-cols-[repeat(2,minmax(158px,1fr))] gap-3 p-4">
+                <ContactCard 
+                  title="Github"
+                  linkUrl="https://github.com/Sterbike"
+                  iconUrl="./github-mark.png"
+                  iconAlt="GitHub Icon"
+                />
+                <ContactCard 
+                  title="Facebook"
+                  linkUrl="https://www.facebook.com/richard.hodi.7/"
+                  iconUrl="./facebook-icon.png"
+                  iconAlt="Facebook Icon"
+                />
+                <ContactCard
+                  title="LinkedIn"
+                  linkUrl="https://www.linkedin.com/in/richárd-hódi-710499183"
+                  iconUrl="./linkedin-icon.png"
+                  iconAlt="LinkedIn Icon"
+                 />
+                <ContactCard
+                  title="Email" 
+                  linkUrl="mailto:hodiricsi@gmail.com"
+                  iconUrl="./gmail.png"
+                  iconAlt="Email Icon"
+                  mail
+                 />
+              </div>
             </div>
           </div>
           <footer className="flex justify-center bg-[#8b8b8b]">
